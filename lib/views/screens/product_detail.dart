@@ -10,53 +10,15 @@ class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({required this.product});
 
   @override
-  _ProductDetailsScreenState createState() => _ProductDetailsScreenState();
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
-  Color containerColor1 = Colors.green;
-  Color containerColor2 = Colors.green;
-  Color containerColor3 = Colors.green;
-  String? currentImage;
-
-  @override
-  void initState() {
-    super.initState();
-    currentImage = widget.product.image;
-  }
-
-  void _changeColorAndImage(int containerIndex) {
-    setState(() {
-      switch (containerIndex) {
-        case 1:
-          containerColor1 = containerColor1 == Colors.green ? Icon(Icons.check);
-          break;
-        case 2:
-          containerColor2 = containerColor2 == Colors.green ? Icon(Icons.check);
-          break;
-        case 3:
-          containerColor3 = containerColor3 == Colors.green ?Icon(Icons.check);
-          break;
-      }
-
-
-      // Update the image
-      currentImage = containerColor1 == Colors.red
-          ? 'https://bloomfield.boutique/9700-home_default/podsvecnik-32sm-ch32sm.jpg'
-          : containerColor2 == Colors.red
-          ? 'https://bloomfield.boutique/8938-home_default/elocnaa-igruska-cm5aln19705a.jpg'
-          : containerColor3 == Colors.red
-          ? 'https://bloomfield.boutique/9700-home_default/podsvecnik-32sm-ch32sm.jpg'
-          : widget.product.image;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    final product = widget.product;
     return Scaffold(
       appBar: AppBar(
-        title: Text(product.name),
+        title: Text(widget.product.name),
         actions: [
           IconButton(
             onPressed: () {},
@@ -78,20 +40,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: AnimatedSwitcher(
-                      switchInCurve: Curves.easeInOut,
 
-                      duration: Duration(seconds: 1),
-                      child: Image.network(
-                        currentImage ?? '',
-                        key: ValueKey<String>(currentImage ?? ''),
-                        height: 200.h,
+                    child: SizedBox(
+                      height: 200.h,
+                      width: double.infinity,
+                      child: Image.asset(
+                        widget.product.image,
+                        height: 200,
                         width: double.infinity,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Text('Image not available');
-                        },
+                        // fit: BoxFit.cover,
                       ),
-
                     ),
                   ),
                   Expanded(
@@ -99,7 +57,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          product.name,
+                          widget.product.name,
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         ),
@@ -110,58 +68,54 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                         40.boxH(),
                         Text(
-                          product.subTitle,
+                          widget.product.subTitle,
                           style: TextStyle(fontSize: 18, color: Colors.grey),
                         ),
                         10.boxH(),
                         Text(
-                          product.price,
+                          widget.product.price,
                           style: TextStyle(fontSize: 24, color: Colors.green),
                         ),
                         10.boxH(),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(1),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor1,
+
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Container(
+                                color: Colors.green,
                                 height: 50.h,
                                 width: 50.w,
+
                               ),
-                            ),
-                            5.boxW(),
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(2),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor2,
+                              5.boxW(),
+                              Container(
+                                color: Colors.green,
                                 height: 50.h,
                                 width: 50.w,
+
                               ),
-                            ),
-                            5.boxW(),
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(3),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor3,
+                              5.boxW(),
+
+                              Container(
+                                color: Colors.green,
                                 height: 50.h,
                                 width: 50.w,
+
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
+
+
                       ],
                     ),
                   ),
+
                 ],
               ),
             ),
             10.boxH(),
             Text(
-              '⭐️ ${product.star}',
+              '⭐️ ${widget.product.star}',
               style: TextStyle(fontSize: 18, color: Colors.orange),
             ),
             Text(
@@ -200,9 +154,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         onPressed: () {},
         child: Icon(Icons.shopping_cart_outlined),
       ),
-
     );
-
   }
-
 }
