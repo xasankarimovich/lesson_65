@@ -40,13 +40,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: AnimatedSwitcher(
-                      switchInCurve: Curves.easeInOut,
-                      duration: Duration(seconds: 1),
-                      child: Image.network(
-                        currentImage ?? '',
-                        key: ValueKey<String>(currentImage ?? ''),
-                        height: 200.h,
+                    child: SizedBox(
+                      height: 200.h,
+                      width: double.infinity,
+                      child: Image.asset(
+                        widget.product.image,
+                        height: 200,
                         width: double.infinity,
                         // fit: BoxFit.cover,
                       ),
@@ -80,34 +79,22 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(1),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor1,
-                                height: 50.h,
-                                width: 50.w,
-                              ),
+                            Container(
+                              color: Colors.green,
+                              height: 50.h,
+                              width: 50.w,
                             ),
                             5.boxW(),
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(2),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor2,
-                                height: 50.h,
-                                width: 50.w,
-                              ),
+                            Container(
+                              color: Colors.green,
+                              height: 50.h,
+                              width: 50.w,
                             ),
                             5.boxW(),
-                            GestureDetector(
-                              onTap: () => _changeColorAndImage(3),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 300),
-                                color: containerColor3,
-                                height: 50.h,
-                                width: 50.w,
-                              ),
+                            Container(
+                              color: Colors.green,
+                              height: 50.h,
+                              width: 50.w,
                             ),
                           ],
                         ),
