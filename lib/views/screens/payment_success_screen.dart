@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lisson_65_state_management/utils/image_path/images_path.dart';
+import 'package:lisson_65_state_management/utils/style/app_text_style.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
   @override

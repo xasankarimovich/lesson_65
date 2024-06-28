@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
+
 class ProductModel {
   final String name;
   final String subTitle;
-  final  icon;
+  final IconData icon;
   final String price;
   final String star;
-  final  image;
+  final String image;
 
   ProductModel({
     required this.image,

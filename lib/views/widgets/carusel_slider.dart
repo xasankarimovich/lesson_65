@@ -2,14 +2,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:lisson_65_state_management/utils/extension/extension.dart';
 
-class CaruselSlider extends StatefulWidget {
-  const CaruselSlider({super.key});
+class CaruselSliders extends StatefulWidget {
+  const CaruselSliders({super.key});
 
   @override
-  State<CaruselSlider> createState() => _CaruselSliderState();
+  State<CaruselSliders> createState() => _CaruselSlidersState();
 }
 
-class _CaruselSliderState extends State<CaruselSlider> {
+class _CaruselSlidersState extends State<CaruselSliders> {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(

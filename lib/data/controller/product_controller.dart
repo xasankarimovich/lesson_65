@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/utils/image_path/images_path.dart';
-
 import '../model/product_model.dart';
+import '../../utils/image_path/images_path.dart';
 
-class ProductController {
+class ProductController with ChangeNotifier {
   List<ProductModel> _list = [
     ProductModel(
       image: AppImages.onLamp,
@@ -18,7 +16,7 @@ class ProductController {
       image: AppImages.onPaint,
       name: 'Painting Berry Plants',
       subTitle: 'Paint',
-      icon: AppIconsSvg.sertsa2Icon,
+      icon: Icons.favorite,
       price: "\$83.00",
       star: '⭐️(4.2)',
     ),
@@ -26,7 +24,7 @@ class ProductController {
       image: AppImages.onPlant,
       name: 'Decorative Plants',
       subTitle: 'Plant',
-      icon: AppIconsSvg.sertsa2Icon,
+      icon: Icons.favorite,
       price: "\$105.00",
       star: '⭐️(4.0)',
     ),
@@ -34,13 +32,13 @@ class ProductController {
       image: AppImages.onShelf,
       name: 'Double Well Shelf',
       subTitle: 'Shelf',
-      icon: AppIconsSvg.sertsa2Icon,
+      icon: Icons.favorite,
       price: "\$93.00",
       star: '⭐️(4.5)',
     ),
-
   ];
-  List<ProductModel> get list{
-  return [..._list];
+
+  List<ProductModel> get list {
+    return [..._list];
   }
 }
