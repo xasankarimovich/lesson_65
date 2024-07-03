@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/views/screens/product_detail.dart';
+import 'package:lesson_65_state_management/views/screens/product_detail.dart';
 import 'package:provider/provider.dart';
 import '../../data/controller/product_controller.dart';
 import '../../data/model/product_model.dart';
@@ -27,7 +27,7 @@ class LivingRoomScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CarouselSlider(items: [], options: CarouselOptions(
+                  child: CarouselSlider(items: const [], options: CarouselOptions(
                     height: 350,
                     aspectRatio: 16 / 9,
                     viewportFraction: 0.8,
@@ -35,8 +35,8 @@ class LivingRoomScreen extends StatelessWidget {
                     enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 3),
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayInterval: const Duration(seconds: 3),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 800),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enlargeCenterPage: true,
                     enlargeFactor: 0.3,
@@ -76,7 +76,7 @@ class LivingRoomScreen extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.all(10.0),
             sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 70,
                 crossAxisSpacing: 10,
                 childAspectRatio: 0.9,
@@ -124,7 +124,7 @@ class ProductCard extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -136,7 +136,7 @@ class ProductCard extends StatelessWidget {
             left: 0,
             right: 40,
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
@@ -151,7 +151,7 @@ class ProductCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -183,7 +183,7 @@ class ProductCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.favorite_border),
+                      icon: const Icon(Icons.favorite_border),
                     ),
                   ),
                 ],

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/data/model/product_model.dart';
-import 'package:lisson_65_state_management/utils/extension/extension.dart';
-import 'package:lisson_65_state_management/utils/style/app_text_style.dart';
-import 'package:lisson_65_state_management/views/screens/payment_success_screen.dart';
+import 'package:lesson_65_state_management/utils/extension/extension.dart';
+import 'package:lesson_65_state_management/views/screens/payment_success_screen.dart';
+
+import '../../data/model/product_model.dart';
+import '../../utils/style/app_text_style.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final ProductModel product;
 
-  const ProductDetailsScreen({required this.product});
+  const ProductDetailsScreen({super.key, required this.product});
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
@@ -22,7 +23,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.share,
             ),
           ),
@@ -57,10 +58,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       children: [
                         Text(
                           widget.product.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         ),
-                        Text(
+                        const Text(
                           'Lamp Light',
                           style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
@@ -68,12 +69,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         40.boxH(),
                         Text(
                           widget.product.subTitle,
-                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                          style: const TextStyle(fontSize: 18, color: Colors.grey),
                         ),
                         10.boxH(),
                         Text(
                           widget.product.price,
-                          style: TextStyle(fontSize: 24, color: Colors.green),
+                          style: const TextStyle(fontSize: 24, color: Colors.green),
                         ),
                         10.boxH(),
                         Row(
@@ -107,22 +108,22 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             10.boxH(),
             Text(
               '⭐️ ${widget.product.star}',
-              style: TextStyle(fontSize: 18, color: Colors.orange),
+              style: const TextStyle(fontSize: 18, color: Colors.orange),
             ),
-            Text(
+            const Text(
               'Simple & Minimalist Light',
               style: TextStyle(fontSize: 18),
             ),
-            Text(
+            const Text(
               'Lorem ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(),
+            const Spacer(),
             SizedBox(
               height: 70,
               width: 300,
               child: FilledButton(
-                style: FilledButton.styleFrom(side: BorderSide()),
+                style: FilledButton.styleFrom(side: const BorderSide()),
                 onPressed: () {
                   showModalBottomSheet(
                     context: context,
@@ -137,22 +138,22 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     color: Colors.black, fontSize: 30.h),
                               ),
                               Container(
-                                child: Text(
-                                  '2 Items',
-                                ),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.green),
+                                child: const Text(
+                                  '2 Items',
+                                ),
                               ),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           FilledButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => PaymentSuccessScreen(),
+                                  builder: (context) => const PaymentSuccessScreen(),
                                 ),
                               );
                             },
@@ -179,7 +180,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.shopping_cart_outlined),
+        child: const Icon(Icons.shopping_cart_outlined),
       ),
     );
   }

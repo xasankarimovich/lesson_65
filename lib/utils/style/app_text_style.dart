@@ -1,6 +1,6 @@
 // app_text_style.dart
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/utils/extension/extension.dart';
+import 'package:lesson_65_state_management/utils/extension/extension.dart';
 import '../color/app_color.dart';
 
 class AppTextStyle {

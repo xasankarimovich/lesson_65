@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/utils/image_path/images_path.dart';
-import 'package:lisson_65_state_management/utils/style/app_text_style.dart';
+import '../../utils/image_path/images_path.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
+  const PaymentSuccessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,23 +14,23 @@ class PaymentSuccessScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.check_circle, color: Colors.green, size: 100),
-            SizedBox(height: 16),
-            Text(
+            const Icon(Icons.check_circle, color: Colors.green, size: 100),
+            const SizedBox(height: 16),
+            const Text(
               'Payment Successful!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'Orders will arrive in 3 days!',
               style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Image.asset(
               AppImages.onLamp,
               height: 100,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
@@ -37,7 +38,7 @@ class PaymentSuccessScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.popUntil(context, (route) => route.isFirst);
               },
-              child: Text('Back to Home'),
+              child: const Text('Back to Home'),
             ),
           ],
         ),

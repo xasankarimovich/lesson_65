@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/data/controller/product_controller.dart';
-import 'package:lisson_65_state_management/utils/extension/extension.dart';
+import 'package:lesson_65_state_management/utils/extension/extension.dart';
+import '../../data/controller/product_controller.dart';
 
 class ProductScreen extends StatelessWidget {
   final ProductController productController;

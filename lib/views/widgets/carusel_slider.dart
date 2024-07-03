@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:lisson_65_state_management/utils/extension/extension.dart';
+import 'package:lesson_65_state_management/utils/extension/extension.dart';
 
 class CaruselSliders extends StatefulWidget {
   const CaruselSliders({super.key});
@@ -21,8 +21,8 @@ class _CaruselSlidersState extends State<CaruselSliders> {
         enableInfiniteScroll: true,
         reverse: false,
         autoPlay: true,
-        autoPlayInterval: Duration(seconds: 3),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
         autoPlayCurve: Curves.fastOutSlowIn,
         enlargeCenterPage: true,
         enlargeFactor: 0.3,
@@ -36,7 +36,7 @@ class _CaruselSlidersState extends State<CaruselSliders> {
               Container(
                 height: 250.h,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   image: DecorationImage(
                     image: NetworkImage(
@@ -49,7 +49,7 @@ class _CaruselSlidersState extends State<CaruselSliders> {
               Container(
                 height: 250.h,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   image: DecorationImage(
                     image: NetworkImage(
@@ -62,7 +62,7 @@ class _CaruselSlidersState extends State<CaruselSliders> {
               Container(
                 height: 250.h,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   image: DecorationImage(
                     image: NetworkImage(
@@ -75,7 +75,7 @@ class _CaruselSlidersState extends State<CaruselSliders> {
               Container(
                 height: 250.h,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),

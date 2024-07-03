@@ -3,7 +3,7 @@ import '../model/product_model.dart';
 import '../../utils/image_path/images_path.dart';
 
 class ProductController with ChangeNotifier {
-  List<ProductModel> _list = [
+  final List<ProductModel>  _list = [
     ProductModel(
       image: AppImages.onLamp,
       name: 'Table Desk Lamp L..',
@@ -40,5 +40,10 @@ class ProductController with ChangeNotifier {
 
   List<ProductModel> get list {
     return [..._list];
+  }
+
+  void addProduct(ProductModel product) {
+    _list.add(product);
+    notifyListeners();
   }
 }
